@@ -1804,6 +1804,20 @@ pub enum ImageFormat {
 }
 
 impl ImageFormat {
+    /// Returns the file extension for the ImageFormat
+    pub const fn extension(self) -> &'static str {
+        match self {
+            ImageFormat::Png => "png",
+            ImageFormat::Jpeg => "jpg",
+            ImageFormat::Webp => "webp",
+            ImageFormat::Gif => "gif",
+            ImageFormat::Svg => "svg",
+            ImageFormat::Bmp => "bmp",
+            ImageFormat::Tiff => "tiff",
+            ImageFormat::Ico => "ico",
+        }
+    }
+
     /// Returns the mime type for the ImageFormat
     pub const fn mime_type(self) -> &'static str {
         match self {
